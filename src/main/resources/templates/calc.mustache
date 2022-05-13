@@ -1,0 +1,263 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>코코넛츠 - 수익률 계산기</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+<div class="row o-hidden border-0 shadow-lg">
+
+    <div class="col col-lg-3">
+
+    </div>
+
+    <div class="bg-light bg-gradient col col-md-6 card-body">
+        <!-- Nested Row within Card Body -->
+        <div class="p-2">
+            <div class="card-header mb-2 text-center font-weight-bold text-primary">
+                수익률 계산기 1.1v _ 20220513v
+            </div>
+
+            <hr>
+            <div>
+                <input disabled id="a1" style="width:30px;" value="0">억
+                <input disabled="" id="a2"
+                       style="width:30px;" value="0">천
+                <input disabled id="a3" style="width:30px;" value="0">백 만원
+                <div class=" row ">
+                    <div class="col-3 col-form-label">매매가(만원)</div>
+                    <div class="col mb-2">
+                        <input type="text" class="form-control" id="house_price" placeholder="0"
+                               onkeyup="inputNumberFormat(this);" onkeydown="moveFocus('loan');">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="btn-group btn-group-sm " role="group">
+                        <button type="button" class="btn btn-outline-dark"
+                                onclick="setzero('#house_price');setzero('#a1');setzero('#a2');setzero('#a3');">
+                            초기화
+                        </button>
+                        <button type="button" class="btn btn-Danger"
+                                onclick="add_price2('#house_price','#a1', '10000');">↑일억원
+                        </button>
+                        <button type="button" class="btn btn-Primary"
+                                onclick="add_price2('#house_price','#a2','1000');">↑천만원
+                        </button>
+                        <button type="button" class="btn btn-Warning" onclick="add_price2('#house_price','#a3','100');">
+                            ↑백만원
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- ?異쒓툑移?-->
+
+            <div class=" row mb-2">
+                <div class="col-3 col-form-label"> 대출(만원)</div>
+                <div class="col">
+                    <input type="text" class="form-control form-control-user col-md" id="loan" placeholder="0"
+                           onkeyup="inputNumberFormat(this);" onkeydown="moveFocus('loan_rate');">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="btn-group btn-group-sm " role="group">
+                    <button type="button" class="btn btn-outline-dark" onclick="setzero('#loan');">
+                        초기화
+                    </button>
+                    <button type="button" class="btn btn-Danger" onclick="add_price('#loan','10000');">↑일억원
+                    </button>
+                    <button type="button" class="btn btn-Primary" onclick="add_price('#loan','1000');">↑천만원
+                    </button>
+                    <button type="button" class="btn btn-Warning" onclick="add_price('#loan','100');">↑백만원</button>
+                </div>
+            </div>
+
+            <div class="row  mb-2">
+                <div class="btn-group btn-group-sm " role="group">
+                    <button type="button" class="btn btn-Success" onclick="p_price('#loan','60');">60%
+                    </button>
+                    <button type="button" class="btn btn-Success" onclick="p_price('#loan','70');">70%
+                    </button>
+                    <button type="button" class="btn btn-Success" onclick="p_price('#loan','80');">80%
+                    </button>
+
+                    <button type="button" class="btn btn-Success" onclick="p_price('#loan','100');">100%
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- ?異쒓툑由?移?-->
+
+            <div class=" row mb-2">
+                <div class="col-3 col-form-label"> 금리(%)</div>
+                <div class="col mb-2">
+
+                    <input type="text" class="form-control form-control-user col-md" id="loan_rate" placeholder="0"
+                           onkeyup="inputNumberFormat2(this);" onkeydown="moveFocus('annually_rent');">
+
+                </div>
+                <div class="btn-group btn-group-sm " role="group">
+                    <button type="button" class="btn btn-outline-dark" onclick="setzero('#loan_rate');">
+                        초기화
+                    </button>
+                    <button type="button" class="btn btn-Danger" onclick="add_price('#loan_rate','1');">1.0%
+                    </button>
+                    <button type="button" class="btn btn-Primary" onclick="add_price('#loan_rate','0.5');">0.5%
+                    </button>
+
+                    <button type="button" class="btn btn-Warning" onclick="add_price('#loan_rate','0.1');">0.1%
+                    </button>
+                </div>
+            </div>
+
+            <hr>
+            <!-- 蹂댁쬆湲?移?-->
+            <input disabled="" id="b1" style="width:30px;" value="0">억<input disabled="" id="b2" style="width:30px;"
+                                                                             value="0">천 <input disabled="" id="b3"
+                                                                                                style="width:30px;"
+                                                                                                value="0">백 만원
+            <div class=" row mb-2">
+                <div class="col-3 col-form-label">
+                    보증금(만원)
+                </div>
+                <div class="col mb-2">
+                    <input type="text" class="form-control form-control-user col-md" id="annually_rent" placeholder="0"
+                           onkeyup="inputNumberFormat(this);" onkeydown="moveFocus('monthly_rent');">
+                </div>
+
+                <div class="btn-group btn-group-sm " role="group">
+                    <button type="button" class="btn btn-outline-dark"
+                            onclick="setzero('#annually_rent');setzero('#b1');setzero('#b2');setzero('#b3');">
+                        초기화
+                    </button>
+                    <button type="button" class="btn btn-Danger" onclick="add_price2('#annually_rent','#b1','10000');">
+                        ↑일억웍
+                    </button>
+                    <button type="button" class="btn btn-Primary" onclick="add_price2('#annually_rent','#b2','1000');">
+                        ↑천만원
+                    </button>
+                    <button type="button" class="btn btn-Warning" onclick="add_price2('#annually_rent','#b3','100');">
+                        ↑백만원
+                    </button>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class=" row mb-2">
+                <div class="col-3 col-form-label">
+                    월세(만원)
+                </div>
+
+                <div class="col mb-2">
+                    <input type="text" class="form-control " id="monthly_rent" placeholder="0"
+                           onkeyup="inputNumberFormat(this);" onkeydown="moveFocus('cost');">
+                </div>
+
+                <div class="btn-group btn-group-sm " role="group">
+                    <button type="button" class="btn btn-outline-dark" onclick="setzero('#monthly_rent');">
+                        초기화
+                    </button>
+                    <button type="button" class="btn btn-Danger" onclick="add_price('#monthly_rent','50');">↑50만원
+                    </button>
+                    <button type="button" class="btn btn-Primary" onclick="add_price('#monthly_rent','10');">↑10만원
+                    </button>
+                    <button type="button" class="btn btn-Warning" onclick="add_price('#monthly_rent','5');">↑5만원
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <!-- 湲고?鍮꾩슜 移?-->
+            <div class="row mb-2">
+                <div class="col-3 col-form-label">비용(만원)</div>
+
+                <div class="col mb-2">
+                    <input type="text" class="form-control" id="cost" placeholder="0" onkeydown="callkey();"
+                           onkeyup="inputNumberFormat(this);">
+
+                </div>
+
+
+                <div class="btn-group btn-group-sm " role="group">
+                    <button type="button" class="btn btn-outline-dark" onclick="setzero('#cost');">
+                        초기화
+                    </button>
+                    <button type="button" class="btn btn-Danger" onclick="add_price('#cost','100');">↑100만원</button>
+                    <button type="button" class="btn btn-Primary" onclick="add_price('#cost','50');">↑50만원
+                    </button>
+                    <button type="button" class="btn btn-Warning" onclick="add_price('#cost','10');">↑10만원
+                    </button>
+                </div>
+            </div>
+            <hr>
+
+            <div onclick="calc();" class=" form-control btn  btn-Dark">
+                계산
+            </div>
+
+            <hr>
+
+            <div class="row mb-2">
+                <div class="col-3 col-form-label"> 투자금</div>
+                <div class="col">
+                    <input type="text" class="form-control form-control-user col-md" id="investment"
+                           placeholder="투자금" readonly>
+                </div>
+
+            </div>
+            <div class="row mb-2">
+                <div class="col-3 col-form-label">월수익(순수익)</div>
+                <div class="col">
+                    <input type="text" class="form-control form-control-user col-md" id="annually_earn"
+                           placeholder="월세" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-3 col-form-label">수익률(%)</div>
+
+                <div class="col">
+                    <input type="text" class="form-control form-control-user col-md" id="annually_earn_rate"
+                           placeholder="수익률" readonly>
+                </div>
+            </div>
+
+
+            <div onclick="initial();" class=" form-control btn  btn-Dark">
+                초기화
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col col-lg-3">
+
+    </div>
+
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>
