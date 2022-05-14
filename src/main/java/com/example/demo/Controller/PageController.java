@@ -9,6 +9,11 @@ public class PageController {
 
     @GetMapping("/")
     public String welcome() {
+        return "main";
+    }
+
+    @GetMapping("/calc")
+    public String goCalc() {
         return "calc";
     }
 }
