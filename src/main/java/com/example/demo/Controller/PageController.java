@@ -16,4 +16,15 @@ public class PageController {
     public String goCalc() {
         return "calc";
     }
+
+    @GetMapping("/soch")
+    public String goSoch() {
+        return "soch/login";
+    }
+
+    @GetMapping("/mail")
+    public String goMail() {
+        return "mailing/main";
+    }
 }
+
