@@ -14,7 +14,7 @@ public class PageController {
 
     @GetMapping("/calc")
     public String goCalc() {
-        return "calc";
+        return "calc/calc";
     }
 
     @GetMapping("/soch")

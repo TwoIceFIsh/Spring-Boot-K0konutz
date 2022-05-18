@@ -23,27 +23,35 @@
 </head>
 <body>
 
+
 <div class="row o-hidden border-0 shadow-lg">
 
     <div class="col col-lg-3">
 
     </div>
 
-    <div class="bg-light bg-gradient col col-md-6 card-body">
+    <div class="border border-danger border-2 rounded-3 bg-light bg-gradient col col-md-6 card-body">
+
         <!-- Nested Row within Card Body -->
         <div class="p-2">
-            <div class="card-header mb-2 text-center font-weight-bold text-primary">
-                수익률 계산기 1.1v _ 20220513v
-            </div>
+            <div class="row">
 
+
+                <div class="col-10 bg-dark border border-warning border-2 card-header mb-2 text-center font-weight-bold text-white">
+                    수익률 계산기 1.2v _ 20220518v
+                </div>
+                <div class="col  border border-warning border-2  card-header mb-2 text-center font-weight-bold ">
+                    <a class="text-dark" href="/">Back</a>
+                </div>
+            </div>
             <hr>
             <div>
                 <input disabled id="a1" style="width:30px;" value="0">억
                 <input disabled="" id="a2"
                        style="width:30px;" value="0">천
                 <input disabled id="a3" style="width:30px;" value="0">백 만원
-                <div class=" row ">
-                    <div class="col-3 col-form-label">매매가(만원)</div>
+                <div class=" row  ">
+                    <div class="col-4 col-form-label">매매가(만원)</div>
                     <div class="col mb-2">
                         <input type="text" class="form-control" id="house_price" placeholder="0"
                                onkeyup="inputNumberFormat(this);" onkeydown="moveFocus('loan');">
@@ -69,9 +77,9 @@
                 </div>
             </div>
             <hr>
-    
+
             <div class=" row mb-2">
-                <div class="col-3 col-form-label"> 대출(만원)</div>
+                <div class="col-4 col-form-label"> 대출(만원)</div>
                 <div class="col">
                     <input type="text" class="form-control form-control-user col-md" id="loan" placeholder="0"
                            onkeyup="inputNumberFormat(this);" onkeydown="moveFocus('loan_rate');">
@@ -107,10 +115,10 @@
             </div>
 
 
-            <!-- ?異쒓툑由?移?-->
+            <hr>
 
             <div class=" row mb-2">
-                <div class="col-3 col-form-label"> 금리(%)</div>
+                <div class="col-4 col-form-label"> 금리(%)</div>
                 <div class="col mb-2">
 
                     <input type="text" class="form-control form-control-user col-md" id="loan_rate" placeholder="0"
@@ -138,7 +146,7 @@
                                                                                                 style="width:30px;"
                                                                                                 value="0">백 만원
             <div class=" row mb-2">
-                <div class="col-3 col-form-label">
+                <div class="col-4 col-form-label">
                     보증금(만원)
                 </div>
                 <div class="col mb-2">
@@ -167,7 +175,7 @@
             <hr>
 
             <div class=" row mb-2">
-                <div class="col-3 col-form-label">
+                <div class="col-4 col-form-label">
                     월세(만원)
                 </div>
 
@@ -191,7 +199,7 @@
             <hr>
             <!-- 湲고?鍮꾩슜 移?-->
             <div class="row mb-2">
-                <div class="col-3 col-form-label">비용(만원)</div>
+                <div class="col-4 col-form-label">비용(만원)</div>
 
                 <div class="col mb-2">
                     <input type="text" class="form-control" id="cost" placeholder="0" onkeydown="callkey();"
@@ -220,27 +228,27 @@
             <hr>
 
             <div class="row mb-2">
-                <div class="col-3 col-form-label"> 투자금</div>
+                <div class="col-4 col-form-label"> 순투자(필요금)</div>
                 <div class="col">
                     <input type="text" class="form-control form-control-user col-md" id="investment"
-                           placeholder="투자금" readonly>
+                           placeholder="순투자(필요금)" readonly>
                 </div>
 
             </div>
             <div class="row mb-2">
-                <div class="col-3 col-form-label">월수익(순수익)</div>
+                <div class="col-4 col-form-label">월순익(연순익)</div>
                 <div class="col">
                     <input type="text" class="form-control form-control-user col-md" id="annually_earn"
-                           placeholder="월세" readonly>
+                           placeholder="월순익(연순익)" readonly>
                 </div>
             </div>
 
             <div class="row mb-2">
-                <div class="col-3 col-form-label">수익률(%)</div>
+                <div class="col-4 col-form-label">수익률(%)</div>
 
                 <div class="col">
                     <input type="text" class="form-control form-control-user col-md" id="annually_earn_rate"
-                           placeholder="수익률" readonly>
+                           placeholder="수익률(%)" readonly>
                 </div>
             </div>
 
@@ -249,7 +257,9 @@
                 초기화
             </div>
 
+
         </div>
+        <div class=" text-center">문의 : team.k0konutz@gmail.com</div>
     </div>
 
     <div class="col col-lg-3">

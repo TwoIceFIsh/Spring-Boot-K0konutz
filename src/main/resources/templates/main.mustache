@@ -20,11 +20,19 @@
 
 <body>
 
-<div class="row d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+<div class="container row d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
 
-    <div class="col-4">
-        <img src="/images/logo1.png" style="width:50%;height:20%;">
-        <a class="btn  bg-light text-dark" href="https://twoicefish-secu.tistory.com">개발자 블로그 방문</a>
+    <div class="row">
+        <div class="col">
+            <img src="/images/logo1.png" style="width:150px;">
+
+        </div>
+
+        <div class="col">
+
+            <a class="btn  float-right bg-light text-dark text-right" href="https://twoicefish-secu.tistory.com">개발자 블로그
+                방문</a>
+        </div>
     </div>
 
 </div>
@@ -38,80 +46,86 @@
 <div class="container">
     <div class="card-deck mb-3 text-center row">
         <div class="col-sm-4 card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">집좀볼래</h4>
+            <div class="mt-2 card-header">
+                <h4 class=" my-0 font-weight-normal">집좀볼래</h4>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>부동산 경매 물건의 모든 정보를 한곳에!</li>
+                    <br><br>
                 </ul>
-                <button type="button" class="btn btn-light position-absolute bottom-0 start-50 translate-middle-x">
+                <button type="button"
+                        class=" btn btn-outline-danger position-absolute bottom-0 start-50 translate-middle-x">
                     🛠️개발중
                 </button>
             </div>
         </div>
         <div class="col-sm-4 card mb-4 box-shadow">
-            <div class="card-header">
+            <div class="mt-2 card-header">
                 <h4 class="my-0 font-weight-normal">부동산 수익률 계산기</h4>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>부동산 수익률을 쉽고 빠르게 계산할 수 있습니다.</li>
-
+                    <br><br>
                 </ul>
-                <button type="button" class="btn btn-success position-absolute bottom-0 start-50 translate-middle-x"
+                <button type="button"
+                        class=" btn btn-outline-success position-absolute bottom-0 start-50 translate-middle-x"
                         onclick="location.href='/calc' ">🌐바로가기
                 </button>
             </div>
         </div>
         <div class="col-sm-4 card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">SOCH</h4>
+            <div class="mt-2 card-header">
+                <h4 class="my-0 font-weight-normal">SOCH*</h4>
             </div>
             <div class="card-body">
-                <h4 class="card-title"><small>Security Operation Center Helper</small></h4>
+                <h4 class="card-title"><h6>* Security Operation Center Helper</h6></h4>
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>정보보안 메일링</li>
                     <li>CVE 정보 리포팅</li>
                     <li>MD5 to HX-Tool Converter</li>
-                    <li>-</li>
+                    <br><br>
                 </ul>
-                <button type="button" class="btn btn-success position-absolute bottom-0 start-50 translate-middle-x"
+                <button type="button"
+                        class=" btn btn-outline-success position-absolute bottom-0 start-50 translate-middle-x"
                         onclick="location.href='/soch' ">🌐바로가기
                 </button>
             </div>
         </div>
 
         <div class="col-sm-4 card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">DAC</h4>
+            <div class="mt-2 card-header">
+                <h4 class="my-0 font-weight-normal">DAC*</h4>
             </div>
             <div class="card-body">
-                <h4 class="card-title"><small>Data Analysis Center</small></h4>
+                <h4 class="card-title"><h6>*Data Analysis Center</h6></h4>
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>데이터 수집 및 가공</li>
                     <li>데이터 통계 및 표현</li>
-
-                    <li>-</li>
+                    <br><br>
                 </ul>
-                <button type="button" class="btn btn-light position-absolute bottom-0 start-50 translate-middle-x">
+                <button type="button"
+                        class=" btn btn-outline-danger position-absolute bottom-0 start-50 translate-middle-x">
                     🛠️개발중
                 </button>
             </div>
         </div>
 
+
         <div class="col-sm-4 card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">DAC</h4>
+            <div class="mt-2 card-header">
+                <h4 class="my-0 font-weight-normal">메일링(보호나라)</h4>
             </div>
             <div class="card-body">
-                <h4 class="card-title"><small>메일링(보호나라)</small></h4>
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>보호나라 신규게시글 메일링</li>
-
-                    <li>-</li>
+                    <br>
+                    <br>
+                    <br>
                 </ul>
-                <button type="button" class="btn btn-success position-absolute bottom-0 start-50 translate-middle-x"
+                <button type="button"
+                        class=" btn btn-outline-success position-absolute bottom-0 start-50 translate-middle-x"
                         onclick="location.href='/mail' ">🌐바로가기
                 </button>
             </div>
@@ -144,5 +158,6 @@
 
         </div>
     </div>
+    <br>
 </footer>
 </html>

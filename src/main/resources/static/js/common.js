@@ -43,17 +43,18 @@ function calc() {
 
 
             const investment = house_price - loan - annually_rent + cost;
+            const b_investment = house_price - loan + cost;
             let annually_earn = monthly_rent * 12 - loan * loan_rate / 100;
             const annually_earn_rate = (annually_earn / investment) * 100;
 
 
             if (investment > 0) {
-                $('#investment').val(comma(investment) + " 만원");
+                $('#investment').val(comma(investment) + " -- (" + comma(b_investment) + ") 만원");
             } else {
                 $('#investment').val("+P: " + comma(-investment) + " 만원");
             }
 
-            $('#annually_earn').val(comma(annually_earn.toFixed(0)) + " 만원 -- (" + comma((annually_earn / 12).toFixed(1)) + "만원)");
+            $('#annually_earn').val(comma((annually_earn / 12).toFixed(1)) + " -- (" + comma(annually_earn.toFixed(0)) + ") 만원");
 
 
             if (investment > 0) {
@@ -63,8 +64,8 @@ function calc() {
                 $('#annually_earn_rate').val("투자금 회수");
             }
         } else {
-            $('#investment').val(comma(house_price) + " 만원");
-            $('#annually_earn').val(comma(monthly_rent) + " 만원 -- (" + comma(monthly_rent * 12).toFixed(1) + "만원)");
+            $('#investment').val(comma(house_price) + " -- (" + comma(b_investment) + ") 만원");
+            $('#annually_earn').val(comma(monthly_rent * 12).toFixed(1) + " 만원 -- (" + comma(monthly_rent) + "만원)");
             $('#annually_earn_rate').val("투자금 회수");
         }
     }
