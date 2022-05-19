@@ -129,12 +129,12 @@
                     <button type="button" class="btn btn-outline-dark" onclick="setzero('#loan_rate');">
                         초기화
                     </button>
-                    <button type="button" class="btn btn-Danger" onclick="add_price('#loan_rate','1');">1.0%
+                    <button type="button" class="btn btn-Danger" onclick="add_price('#loan_rate','1');">↑1.0%
                     </button>
-                    <button type="button" class="btn btn-Primary" onclick="add_price('#loan_rate','0.5');">0.5%
+                    <button type="button" class="btn btn-Primary" onclick="add_price('#loan_rate','0.5');">↑0.5%
                     </button>
 
-                    <button type="button" class="btn btn-Warning" onclick="add_price('#loan_rate','0.1');">0.1%
+                    <button type="button" class="btn btn-Warning" onclick="add_price('#loan_rate','0.1');">↑0.1%
                     </button>
                 </div>
             </div>
@@ -160,7 +160,7 @@
                         초기화
                     </button>
                     <button type="button" class="btn btn-Danger" onclick="add_price2('#annually_rent','#b1','10000');">
-                        ↑일억웍
+                        ↑일억원
                     </button>
                     <button type="button" class="btn btn-Primary" onclick="add_price2('#annually_rent','#b2','1000');">
                         ↑천만원
@@ -221,10 +221,17 @@
             </div>
             <hr>
 
-            <div onclick="calc();" class=" form-control btn  btn-Dark">
-                계산
+            <div class="row">
+                <div class="col-1"></div>
+            <div onclick="calc();" class="col form-control btn  btn-Dark">
+                (계산) 일반매매
             </div>
-
+            <div class="col-1"></div>
+            <div onclick="calc('a');" class="col form-control btn  btn-Dark">
+                (계산) 갭투자
+            </div>
+                <div class="col-1"></div>
+            </div>
             <hr>
 
             <div class="row mb-2">

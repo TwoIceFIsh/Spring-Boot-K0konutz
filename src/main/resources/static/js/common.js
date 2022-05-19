@@ -1,4 +1,4 @@
-function calc() {
+function calc(a) {
 
 
     const house_price = parseInt(uncomma($('#house_price').val()));
@@ -41,7 +41,9 @@ function calc() {
             if ($('#cost').val() == "")
                 cost = 0;
 
-
+            if (a ==='a'){
+                annually_rent = 0;
+            }
             const investment = house_price - loan - annually_rent + cost;
             const b_investment = house_price - loan + cost;
             let annually_earn = monthly_rent * 12 - loan * loan_rate / 100;
