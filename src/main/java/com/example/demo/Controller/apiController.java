@@ -1,15 +1,24 @@
 package com.example.demo.Controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@ToString
 @RestController
+@Slf4j
 public class apiController {
 
-    @GetMapping("/mailing/{mailAddress}")
-    public void mailContll(@PathVariable String mailAddress) {
+    @PostMapping("/emailCheck")
+    public ResponseEntity mailContll(@RequestBody String data) {
+        System.out.println(data);
+        log.debug("z");
+        return ResponseEntity.status(HttpStatus.OK).body('1');
 
     }
 }

@@ -8,6 +8,8 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
             integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+    <script src="/js/mailing.js"></script>
 </head>
 <body>
 
@@ -22,11 +24,10 @@
 
         </div>
 
-        <div class="col m-5 p-2 input-group">
-            <input disabled id="email" name="email" type="email" class="form-control" placeholder="이메일 입력..." value="">
-            <span class="input-group-btn">
-        <button class="btn btn-warning" type="button">등록/해제</button>
-      </span>
+        <div class="col-10 m-5 p-2 input-group">
+            <input id="email" name="email" type="email" class="form-control" placeholder="이메일 입력..." value="">
+            <span class="input-group-btn"></span>
+            <button class="btn btn-warning" type="button" onclick="action();">등록/해제</button>
         </div>
 
         <div class="col page-header">
@@ -34,12 +35,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-10"></div>
-        <div class="col-1  border border-warning border-2  card-header mb-2 text-center font-weight-bold ">
+        <div class="col-9"></div>
+        <div class="col  border border-warning border-2  card-header mb-2 text-center font-weight-bold ">
             <a class="text-dark" href="/">Back</a>
         </div>
     </div>
     <div class="col page-header">
+        <br>
         <h3><small>수동등록 문의 : Aiden Lee(이병호)</small></h3>
     </div>
 </div>
