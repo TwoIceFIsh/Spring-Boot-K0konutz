@@ -18,8 +18,7 @@ public class apiController {
     @PostMapping("/emailCheck")
     public ResponseEntity mailContll(@RequestBody mailingDTO address) {
 
-        log.info(address.getAddress());
-        return ResponseEntity.status(HttpStatus.OK).body('1');
+        return ResponseEntity.status(HttpStatus.OK).body(address);
 
     }
 }

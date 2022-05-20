@@ -2,17 +2,25 @@ function calc(a) {
 
 
     const house_price = parseInt(uncomma($('#house_price').val()));
-    const loan = parseInt(uncomma($('#loan').val()));
+    let loan = parseInt(uncomma($('#loan').val()));
     let loan_rate = parseFloat($('#loan_rate').val());
     let annually_rent = parseInt(uncomma($('#annually_rent').val()));
-    const monthly_rent = parseInt(uncomma($('#monthly_rent').val()));
+    let monthly_rent = parseInt(uncomma($('#monthly_rent').val()));
     let cost = parseInt(uncomma($('#cost').val()));
+
+    if (a === 'b') {
+        loan = 0;
+        loan_rate = 0;
+    }
+
+    if (a === 'c') {
+        loan = house_price;
+    }
 
     if ($('#loan').val() === "")
         $('#loan').val('0');
     if ($('#loan_rate').val() === "")
         $('#loan_rate').val('0');
-
 
     if (house_price === 0 || $('#house_price').val() === '') {
         alert('매매가를 입력해주세요');
@@ -23,7 +31,22 @@ function calc(a) {
     } else {
 
         if ($('#loan').val() != 0 || $('#loan').val() != "") {
-            // ?ъ옄湲?= 留ㅼ닔媛寃?- ?異쒓툑 - ?꾩꽭湲?+ 鍮꾩슜
+
+
+            if ($('#cost').val() == "")
+                cost = 0;
+
+            if (a === 'a') {
+                annually_rent = 0;
+            }
+            if ($('#monthly_rent').val() === "") {
+                monthly_rent = 0;
+            }
+
+            const investment = house_price - loan - annually_rent + cost;
+            const b_investment = house_price - loan + cost;
+            let annually_earn = monthly_rent * 12 - loan * loan_rate / 100;
+            const annually_earn_rate = (annually_earn / investment) * 100;
 
 
             if ($('#annually_rent').val() === "") {
@@ -31,24 +54,6 @@ function calc(a) {
                 document.getElementById('annually_rent').focus();
                 return 0;
             }
-
-            if ($('#monthly_rent').val() === "") {
-                alert('월세를 입력해주세요');
-                document.getElementById('monthly_rent').focus();
-                return 0;
-            }
-
-            if ($('#cost').val() == "")
-                cost = 0;
-
-            if (a ==='a'){
-                annually_rent = 0;
-            }
-            const investment = house_price - loan - annually_rent + cost;
-            const b_investment = house_price - loan + cost;
-            let annually_earn = monthly_rent * 12 - loan * loan_rate / 100;
-            const annually_earn_rate = (annually_earn / investment) * 100;
-
 
             if (investment > 0) {
                 $('#investment').val(comma(investment) + " -- (" + comma(b_investment) + ") 만원");
