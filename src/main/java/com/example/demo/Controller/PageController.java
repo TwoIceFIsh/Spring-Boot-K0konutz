@@ -26,5 +26,15 @@ public class PageController {
     public String goMail() {
         return "mailing/main";
     }
+
+    @GetMapping("/kokonutz/map")
+    public String goMap() {
+        return "kokonutz/map";
+    }
+
+    @GetMapping("/kokonutz")
+    public String goKokonutz() {
+        return "kokonutz/main";
+    }
 }
 
