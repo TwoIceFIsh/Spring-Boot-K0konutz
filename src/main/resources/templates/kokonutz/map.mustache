@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Kakao 지도 시작하기</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
 </head>
 <body>
 <div id="map" style="width:500px;height:400px;"></div>
@@ -10,36 +12,6 @@
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=88ebb8c53a6311255103e83df3dda05c&libraries=services,clusterer,drawing"></script>
 
 <script>
-
-    fetch("/map/json/si.json")
-            .then(response => {
-                return response.json();
-            })
-            .then(jsondata => {
-
-
-                let mapNumber = jsondata.features.length;
-                console.log(mapNumber);
-
-                for (let i = 0; i < mapNumber; i++) {
-                    console.log(jsondata.features[i].properties.CTP_KOR_NM);
-                }
-
-            });
-
-
-    // 지도에 폴리곤으로 표시할 영역데이터 배열입니다
-    var areas = [
-        {
-            name: '서울',
-            path: [
-                new kakao.maps.LatLng(37.63633745484535, 126.98419895293965),
-                new kakao.maps.LatLng(37.62979311656106, 126.96376722201323)
-
-            ]
-        }
-    ];
-
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
             mapOption = {
                 center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -50,27 +22,56 @@
             customOverlay = new kakao.maps.CustomOverlay({}),
             infowindow = new kakao.maps.InfoWindow({removable: true});
 
-    // 지도에 영역데이터를 폴리곤으로 표시합니다
-    for (var i = 0, len = areas.length; i < len; i++) {
-        displayArea(areas[i]);
-    }
+    const a = [];
+    fetch("/map/json/si.json")
+            .then(response => {
+                return response.json();
+            })
+            .then(jsondata => {
 
-    // 다각형을 생상하고 이벤트를 등록하는 함수입니다
-    function displayArea(area) {
+                // 행정구역 갯수 인
+                let mapNumber = jsondata.features.length;
+                console.log(mapNumber);
 
-        // 다각형을 생성합니다
-        var polygon = new kakao.maps.Polygon({
-            map: map, // 다각형을 표시할 지도 객체
-            path: area.path,
-            strokeWeight: 2,
-            strokeColor: '#004c80',
-            strokeOpacity: 0.8,
-            fillColor: '#fff',
-            fillOpacity: 0.7
-        });
+                // 행정구역 명칭 획득
+                for (let i = 0; i < mapNumber; i++) {
+                    console.log(jsondata.features[i].properties.CTP_KOR_NM);
+                    let cities = ['서울특별시', '대구광역시', '광주광역시', '대전광역시', '충청북도', '울산광역시', '세종특별자치시'];
+                    if (cities.includes(jsondata.features[i].properties.CTP_KOR_NM)) {
+
+                        // A 타입 좌표
+                        for (let j = 0; j < jsondata.features[i].geometry.coordinates.length; j++) {
+                            //console.log(jsondata.features[i].geometry.coordinates[j]);
+
+                            for (let k = 0; k < jsondata.features[i].geometry.coordinates[j].length; k++) {
+                                //console.log(jsondata.features[i].geometry.coordinates[j][k]);
+
+                            }
+                        }
+                    } else {
+
+                        // B 타입 좌표
+                        for (let j = 0; j < jsondata.features[i].geometry.coordinates.length; j++) {
+                            //console.log(jsondata.features[i].geometry.coordinates[j]);
+
+                            for (let k = 0; k < jsondata.features[i].geometry.coordinates[j].length; k++) {
+                                //console.log(jsondata.features[i].geometry.coordinates[j][k]);
+                                for (let l = 0; l < jsondata.features[i].geometry.coordinates[j][k].length; l++) {
+                                    //console.log(jsondata.features[i].geometry.coordinates[j][k][l]);
 
 
-    }
+                                }
+                            }
+                        }
+                    }
+
+                    var jsonData = JSON.stringify(a);
+                    console.log(jsonData);
+                }
+
+            });
+
+
 </script>
 </body>
 </html>
