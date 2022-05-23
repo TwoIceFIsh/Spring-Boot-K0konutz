@@ -32,6 +32,11 @@ public class PageController {
         return "kokonutz/map";
     }
 
+    @GetMapping("/test")
+    public String goKokonutz() {
+        return "kokonutz/main";
+    }
+
     @GetMapping("/kokonutz")
     public String goKokonutz() {
         return "kokonutz/main";
