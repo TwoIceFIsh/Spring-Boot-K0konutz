@@ -33,8 +33,8 @@ public class PageController {
     }
 
     @GetMapping("/test")
-    public String goKokonutz() {
-        return "kokonutz/main";
+    public String mm() {
+        return "test";
     }
 
     @GetMapping("/kokonutz")
