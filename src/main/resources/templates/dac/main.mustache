@@ -10,6 +10,76 @@
 </head>
 <body>
 
+<script type="text/javascript">
+
+    var no = 2;
+
+    function add(id) {
+        let txt = `<tr id="row-${no}">
+            <th class="col-1">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-outline-danger">🔺</button>
+                    <button class="btn btn-outline-danger">🔻</button>
+
+                </div>
+
+            </th>
+            <td class="col-1">
+                <input type="text" class="form-control" placeholder="" value="${no}" disabled>
+            </td>
+            <td class="col-auto">
+                <input type="text" class="form-control" placeholder="Col Name">
+            </td>
+            <td class="col-2">
+                <div class="btn-group" role="group">
+
+                    <select class="form-select" aria-label="Default select example">
+
+                        <option value="Text">Text</option>
+                        <option value="Table">Table</option>
+                        <option value="Image">Image</option>
+                    </select>
+
+                    <select class=" form-select" aria-label="Default select example ">
+                        <option selected value="Text">Text</option>
+                        <option value="Count">Count</option>
+                        <option value="Relay(';')">Relay(';')</option>
+                        <option value="Num(Min)">Num(Min)</option>
+                        <option value="Num(Max)">Num(Max)</option>
+                    </select>
+
+                </div>
+            </td>
+
+            <td class="col-auto">
+                <input type="text" class="form-control" placeholder="Insert Query Selector">
+            </td>
+            <td class="col">
+                <div class="btn-group" role="group">
+                    <button class="col btn btn-primary">🛠</button>
+                    <button class="col btn btn-success">✅</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button id="row-${no}-btn" onclick="add(this.id);" class="col btn btn-warning">✖</button>
+                    <button id="${no}" class="col btn btn-danger" onclick="remove(this.id);">➖</button>
+                </div>
+
+            </td>
+
+        </tr>`;
+
+        $('#row-' + (no - 1).toString()).after(txt);
+        no += 1;
+    }
+
+    function remove(id) {
+        if (no > 2) {
+            $('#row-' + (no - 1).toString()).remove();
+            no -= 1;
+        }
+
+    }
+</script>
 
 <div class="input-group p-4">
 
@@ -22,7 +92,7 @@
     <div class="  input-group">
         <button class="col-2 btn btn-primary" disabled type="button">Project Name</button>
         <input type="text" class="form-control" placeholder="Project Name">
-        <button class="col-2 btn btn-secondary">✔ Save Prject</button>
+        <button class="col-2 btn btn-primary">✔ Save Project</button>
     </div>
 </div>
 
@@ -41,7 +111,7 @@
         </thead>
 
         <tbody>
-        <tr>
+        <tr id="row-1">
             <th class="col-1">
                 <div class="btn-group" role="group">
                     <button class="btn btn-outline-danger">🔺</button>
@@ -86,14 +156,12 @@
                     <button class="col btn btn-success">✅</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button class="col btn btn-warning">✖</button>
-                    <button class="col btn btn-danger">➖</button>
+                    <button id="row-1-btn" onclick="add(this.id);" class="col btn btn-warning">✖</button>
+                    <button id="1" class="col btn btn-danger" onclick="remove(this.id);">➖</button>
                 </div>
 
             </td>
-            <td>
 
-            </td>
         </tr>
 
         </tbody>
