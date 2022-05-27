@@ -34,7 +34,7 @@ public class PageController {
 
     @GetMapping("/test")
     public String mm() {
-        return "test";
+        return "dac/main";
     }
 
     @GetMapping("/kokonutz")
