@@ -12,9 +12,20 @@
 
 
 <div class="input-group p-4">
+
     <input type="text" class="form-control" placeholder="Insert Test Url">
-    <button class="btn btn-outline-secondary" type="button">Test Connection</button>
+    <button class="btn btn-outline-secondary" type="button">Open/Test URL</button>
 </div>
+
+
+<div class="row  p-4">
+    <div class="  input-group">
+        <button class="col-2 btn btn-primary" disabled type="button">Project Name</button>
+        <input type="text" class="form-control" placeholder="Project Name">
+        <button class="col-2 btn btn-secondary">✔ Save Prject</button>
+    </div>
+</div>
+
 
 <div class="p-4">
     <table class="table table-hover">
@@ -23,10 +34,9 @@
             <th scope="col">Order</th>
             <th scope="col">No</th>
             <th scope="col">Column Name</th>
-            <th scope="col">Type</th>
-            <th scope="col">Option</th>
+            <th scope="col">Type / Option</th>
             <th scope="col">Select Query</th>
-            <th scope="col">Test / Save / Add / Cancle</th>
+            <th scope="col">Test / Save / Add / Remove</th>
         </tr>
         </thead>
 
@@ -43,27 +53,31 @@
             <td class="col-1">
                 <input type="text" class="form-control" placeholder="" value="1" disabled>
             </td>
-            <td class="col-2">
+            <td class="col-auto">
                 <input type="text" class="form-control" placeholder="Col Name">
             </td>
             <td class="col-2">
-                <select class="form-select" aria-label="Default select example col-1">
+                <div class="btn-group" role="group">
 
-                    <option value="Text">Text</option>
-                    <option value="Table">Table</option>
-                    <option value="Image">Image</option>
-                </select>
+                    <select class="form-select" aria-label="Default select example">
+
+                        <option value="Text">Text</option>
+                        <option value="Table">Table</option>
+                        <option value="Image">Image</option>
+                    </select>
+
+                    <select class=" form-select" aria-label="Default select example ">
+                        <option selected value="Text">Text</option>
+                        <option value="Count">Count</option>
+                        <option value="Relay(';')">Relay(';')</option>
+                        <option value="Num(Min)">Num(Min)</option>
+                        <option value="Num(Max)">Num(Max)</option>
+                    </select>
+
+                </div>
             </td>
-            <td class="col-2">
-                <select class="form-select" aria-label="Default select example col-1">
-                    <option selected value="Text">Text</option>
-                    <option value="Count">Count</option>
-                    <option value="Relay(';')">Relay(';')</option>
-                    <option value="Num(Min)">Num(Min)</option>
-                    <option value="Num(Max)">Num(Max)</option>
-                </select>
-            </td>
-            <td class="col">
+
+            <td class="col-auto">
                 <input type="text" class="form-control" placeholder="Insert Query Selector">
             </td>
             <td class="col">
