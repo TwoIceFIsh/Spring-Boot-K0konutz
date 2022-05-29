@@ -52,16 +52,16 @@
             </td>
 
             <td class="col-auto">
-                <input type="text" class="form-control" placeholder="Insert Query Selector">
+                <input type="text" class="form-control"  id='${no}-SQ' placeholder="Insert Query Selector">
             </td>
             <td class="col">
                 <div class="btn-group" role="group">
-                    <button class="col btn btn-primary">🛠</button>
+                    <button class="col btn btn-primary"   onclick="test();">🛠</button>
                     <button class="col btn btn-success">✅</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button id="row-${no}-btn" onclick="add(this.id);" class="col btn btn-warning">✖</button>
-                    <button id="${no}" class="col btn btn-danger" onclick="remove(this.id);">➖</button>
+                    <button id="${no}-add" onclick="add(this.id);" class="col btn btn-warning">✖</button>
+                    <button id="${no}-remove" class="col btn btn-danger" onclick="remove();">➖</button>
                 </div>
 
             </td>
@@ -78,6 +78,17 @@
             no -= 1;
         }
 
+    }
+
+    function test(id) {
+        var a = id.split('-');
+        var sq_id = a[0] + '-' + a[1];
+
+        if ($('#' + sq_id + '-sq').val() != '') {
+            alert($('#' + sq_id + '-sq').val());
+        } else {
+            alert('Please Insert Select Query');
+        }
     }
 </script>
 
@@ -129,14 +140,14 @@
             <td class="col-2">
                 <div class="btn-group" role="group">
 
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" id="1-Type">
 
                         <option value="Text">Text</option>
                         <option value="Table">Table</option>
                         <option value="Image">Image</option>
                     </select>
 
-                    <select class=" form-select" aria-label="Default select example ">
+                    <select class=" form-select" id="1-Option">
                         <option selected value="Text">Text</option>
                         <option value="Count">Count</option>
                         <option value="Relay(';')">Relay(';')</option>
@@ -148,16 +159,16 @@
             </td>
 
             <td class="col-auto">
-                <input type="text" class="form-control" placeholder="Insert Query Selector">
+                <input type="text" class="form-control" id="1-QS" placeholder="Insert Query Selector">
             </td>
             <td class="col">
                 <div class="btn-group" role="group">
-                    <button class="col btn btn-primary">🛠</button>
+                    <button class="col btn btn-primary" onclick="test();">🛠</button>
                     <button class="col btn btn-success">✅</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button id="row-1-btn" onclick="add(this.id);" class="col btn btn-warning">✖</button>
-                    <button id="1" class="col btn btn-danger" onclick="remove(this.id);">➖</button>
+                    <button id="1-add" onclick="add(this.id);" class="col btn btn-warning">✖</button>
+                    <button id="1-remove" class="col btn btn-danger" onclick="remove(this.id);">➖</button>
                 </div>
 
             </td>
