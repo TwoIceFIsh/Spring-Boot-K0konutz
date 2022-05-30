@@ -60,7 +60,7 @@
                     <button class="col btn btn-success">✅</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button id="${no}-add" onclick="add(this.id);" class="col btn btn-warning">✖</button>
+                    <button id="${no}-add" onclick="add(this.id);" class="col btn btn-warning">➕</button>
                     <button id="${no}-remove" class="col btn btn-danger" onclick="remove();">➖</button>
                 </div>
 
@@ -83,7 +83,7 @@
     function test(id) {
         var a = id.split('-');
         var sq_id = a[0] + '-' + a[1];
-
+        alert('' + $('#' + sq_id + '-sq').val());
         if ($('#' + sq_id + '-sq').val() != '') {
             alert($('#' + sq_id + '-sq').val());
         } else {
@@ -167,7 +167,7 @@
                     <button class="col btn btn-success">✅</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button id="1-add" onclick="add(this.id);" class="col btn btn-warning">✖</button>
+                    <button id="1-add" onclick="add(this.id);" class="col btn btn-warning">➕</button>
                     <button id="1-remove" class="col btn btn-danger" onclick="remove(this.id);">➖</button>
                 </div>
 
