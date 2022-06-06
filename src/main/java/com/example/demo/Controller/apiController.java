@@ -4,11 +4,15 @@ package com.example.demo.Controller;
 import com.example.demo.DTO.mailing.mailingDTO;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 @ToString
 @RestController
@@ -16,9 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class apiController {
 
     @PostMapping("/emailCheck")
-    public ResponseEntity mailContll(@RequestBody mailingDTO address) {
+    public ResponseEntity mailContll(@RequestBody mailingDTO address) throws IOException {
 
-        return ResponseEntity.status(HttpStatus.OK).body(address);
+        Document doc = Jsoup.connect("https://androidweekly.net/").get();
+        log.info(String.valueOf(doc.body()));
+        return ResponseEntity.status(HttpStatus.OK).body('a');
 
     }
 }
