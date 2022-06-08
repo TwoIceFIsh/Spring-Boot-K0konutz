@@ -11,5 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class mailingDTO {
-    String address;
+    String email_address;
 }

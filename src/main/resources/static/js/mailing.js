@@ -1,9 +1,9 @@
 function action() {
 
     const email = $('#email').val();
-    formData = {'email': email};
+    formData = {'address': email};
 
-    fetch('/emailCheck', {
+    fetch('/email_address', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
