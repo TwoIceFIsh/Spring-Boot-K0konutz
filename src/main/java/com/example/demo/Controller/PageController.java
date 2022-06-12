@@ -1,11 +1,18 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Service.mailingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.io.IOException;
 
 @Controller
 public class PageController {
 
+    @Autowired
+    mailingService mailingservice;
 
     @GetMapping("/")
     public String welcome() {
@@ -23,7 +30,8 @@ public class PageController {
     }
 
     @GetMapping("/mail")
-    public String goMail() {
+    public String goMail(Model model) throws IOException {
+        model.addAttribute("mail_count", mailingservice.get_num());
         return "mailing/main";
     }
 

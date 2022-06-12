@@ -18,14 +18,10 @@ public class mailController {
     private mailingService mailing;
 
 
-    @PostMapping("/mail_test")
+    @PostMapping("/email_address")
     public ResponseEntity requestBodyJsonA(@RequestBody mailingDTO mailingdto) {
         return ResponseEntity.status(HttpStatus.OK).body(mailing.mail_insert(mailingdto));
     }
 
-    @PostMapping("/mail2")
-    public ResponseEntity requestBodyJson(@RequestBody mailingDTO mailingdto) {
-        return ResponseEntity.status(HttpStatus.OK).body("test");
-    }
 
 }
