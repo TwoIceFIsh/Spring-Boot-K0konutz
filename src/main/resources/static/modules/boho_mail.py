@@ -138,8 +138,9 @@ while (True):
         
         if output != '':
             f = open('./mail_list.txt', 'r')
-            for email_address in f.readline():
-                sendMail(output,  email_address)
+            for email_address in f.readlines():
+                print(email_address)
+                sendMail(output,  email_address.strip().replace('\n',''))
 
     print('end')
     time.sleep(900)
