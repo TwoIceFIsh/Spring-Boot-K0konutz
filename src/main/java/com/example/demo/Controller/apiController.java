@@ -21,8 +21,7 @@ public class apiController {
 
     @PostMapping("/emailCheck")
     public ResponseEntity mailContll(@RequestBody mailingDTO address) throws IOException {
-
-        Document doc = Jsoup.connect("https://androidweekly.net/").get();
+        Document doc = Jsoup.connect("http://androidweekly.net/").get();
         log.info(String.valueOf(doc.body()));
         return ResponseEntity.status(HttpStatus.OK).body('a');
 
