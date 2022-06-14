@@ -14,9 +14,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @Slf4j
 public class KokonutApplication {
-
     public static void main(String[] args) {
-
         SpringApplication.run(KokonutApplication.class, args);
     }
 

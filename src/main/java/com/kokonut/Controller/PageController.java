@@ -49,5 +49,11 @@ public class PageController {
     public String goKokonutz() {
         return "kokonutz/main";
     }
+
+
+    @GetMapping("/dac")
+    public String go_dac() {
+        return "dac/make";
+    }
 }
 
