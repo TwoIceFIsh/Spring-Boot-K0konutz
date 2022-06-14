@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.kokonut;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.Context;
@@ -13,17 +13,15 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @Slf4j
-public class DemoApplication {
+public class KokonutApplication {
 
     public static void main(String[] args) {
 
-        log.info("!!!!!!!!!!!!!!hello world!!!!!!!!!!!!!!!!!!!!!!");
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(KokonutApplication.class, args);
     }
 
     @Bean
     public ServletWebServerFactory servletContainer() {
-        log.info("hello world!!!!!!!!!!!!!!!!!!!!!!");
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
             @Override
             protected void postProcessContext(Context context) {

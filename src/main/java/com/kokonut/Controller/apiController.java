@@ -1,7 +1,7 @@
-package com.example.demo.Controller;
+package com.kokonut.Controller;
 
 
-import com.example.demo.DTO.mailing.mailingDTO;
+import com.kokonut.DTO.mailing.mailingDTO;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;

@@ -1,7 +1,7 @@
-package com.example.demo.Controller;
+package com.kokonut.Controller;
 
-import com.example.demo.DTO.mailing.mailingDTO;
-import com.example.demo.Service.mailingService;
+import com.kokonut.DTO.mailing.mailingDTO;
+import com.kokonut.Service.mailingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

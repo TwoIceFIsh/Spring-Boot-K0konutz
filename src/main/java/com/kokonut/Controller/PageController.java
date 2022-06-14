@@ -1,6 +1,6 @@
-package com.example.demo.Controller;
+package com.kokonut.Controller;
 
-import com.example.demo.Service.mailingService;
+import com.kokonut.Service.mailingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

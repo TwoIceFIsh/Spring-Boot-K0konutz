@@ -1,4 +1,4 @@
-package com.example.demo.DTO.mailing;
+package com.kokonut.DTO.mailing;
 
 
 import lombok.AllArgsConstructor;
