@@ -14,36 +14,40 @@
 <body>
 
 
-<div class="container m-4 text-center">
-    <div class="col page-header">
-        <h1>메일링(보호나라 - 보안공지)</h1>
-    </div>
-
-    <div class="row">
+<div class="container">
+    <div class="col  mt-5 text-center">
         <div class="col page-header">
-
+            <h1>메일링</h1>
+            <br>
+            <h4>KISA 보호나라 보안공지 신규 게시물 알림 1.0v</h4>
         </div>
 
-        <div class="col-5 m-5 p-2 input-group">
-            <input id="email" name="email" type="email" onkeyup="enterkey();" class="form-control"
-                   placeholder="이메일 입력..." value="">
-            <span class="input-group-btn"></span>
-            <button class="btn btn-warning" type="button" onclick="action();">등록/해제</button>
-        </div>
+        <div class="row">
+            <div class="col page-header">
 
+            </div>
+
+            <div class="col-5 m-5 p-2 input-group">
+                <input id="email" name="email" type="email" onkeyup="enterkey();" class="form-control"
+                       placeholder="이메일 입력..." value="">
+                <span class="input-group-btn"></span>
+                <button class="btn btn-warning" type="button" onclick="action();">등록/해제</button>
+            </div>
+
+            <div class="col page-header">
+                <h5>현재 {{mail_count}}명 수신 중</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9"></div>
+            <div class="col  border border-warning border-2  card-header mb-2 text-center font-weight-bold ">
+                <a class="text-dark" href="/">Back</a>
+            </div>
+        </div>
         <div class="col page-header">
-            <h5>현재 {{mail_count}}명 수신 중</h5>
+            <br>
+            <h3><small>문의 : Aiden Lee(이병호)</small></h3>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-9"></div>
-        <div class="col  border border-warning border-2  card-header mb-2 text-center font-weight-bold ">
-            <a class="text-dark" href="/">Back</a>
-        </div>
-    </div>
-    <div class="col page-header">
-        <br>
-        <h3><small>문의 : Aiden Lee(이병호)</small></h3>
     </div>
 </div>
 </body>
