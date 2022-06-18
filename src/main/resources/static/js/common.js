@@ -1,6 +1,4 @@
 function calc(a) {
-
-
     const house_price = parseInt(uncomma($('#house_price').val()));
     let loan = parseInt(uncomma($('#loan').val()));
     let loan_rate = parseFloat($('#loan_rate').val());
@@ -79,21 +77,7 @@ function calc(a) {
 }
 
 function initial() {
-    $('#house_price').val('');
-    $('#loan').val('');
-    $('#loan_rate').val('');
-    $('#annually_rent').val('');
-    $('#monthly_rent').val('');
-    $('#cost').val('');
-    $('#investment').val('');
-    $('#annually_earn').val('');
-    $('#annually_earn_rate').val('');
-    $('#a1').val('0');
-    $('#a2').val('0');
-    $('#a3').val('0');
-    $('#b1').val('0');
-    $('#b2').val('0');
-    $('#b3').val('0');
+    location.reload();
 }
 
 function add_price2(id, id2, price) {
