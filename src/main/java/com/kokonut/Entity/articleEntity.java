@@ -29,4 +29,8 @@ public class articleEntity {
     @Column
     String date;
 
+    public articleEntity toEntity() {
+        return new articleEntity(id, title, url, date);
+    }
+
 }

@@ -24,11 +24,17 @@ public class mailingService {
         return (List<articleEntity>) articleRepository.findAll();
     }
 
+//    public List<articleEntity> setArticles() {
+//        ArrayList<String> articles_list = get_list("./article_lists.txt");
+//
+//    }
+
     public Collection<String> get_mail_list() {
         return get_list("./mail_list.txt");
     }
 
     public int mail_insert(mailingDTO mailingdto) {
+
 
         try {
 
