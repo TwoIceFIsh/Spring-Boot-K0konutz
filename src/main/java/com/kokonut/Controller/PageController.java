@@ -40,7 +40,7 @@ public class PageController {
     @GetMapping("/mail")
     public String goMail(Model model) throws IOException {
         model.addAttribute("mail_count", mailingservice.get_list("./mail_list.txt").size());
-
+        //model.addAttribute("articles", mailingservice.getArticleList());
 
         return "mailing/main";
     }

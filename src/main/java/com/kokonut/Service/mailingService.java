@@ -1,17 +1,28 @@
 package com.kokonut.Service;
 
 import com.kokonut.DTO.mailing.mailingDTO;
+import com.kokonut.Entity.articleEntity;
+import com.kokonut.Repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Service
 @Slf4j
 public class mailingService {
 
+
+    @Autowired
+    ArticleRepository articleRepository;
+
+    public List<articleEntity> getArticleList() {
+        return (List<articleEntity>) articleRepository.findAll();
+    }
 
     public Collection<String> get_mail_list() {
         return get_list("./mail_list.txt");
