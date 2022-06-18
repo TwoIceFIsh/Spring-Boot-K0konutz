@@ -17,8 +17,8 @@ public class mailController {
     @Autowired
     private mailingService mailing;
 
-
     @PostMapping("/email_address")
+    // ajax 호출 - 이메일 등록 로직
     public ResponseEntity requestBodyJsonA(@RequestBody mailingDTO mailingdto) {
         return ResponseEntity.status(HttpStatus.OK).body(mailing.mail_insert(mailingdto));
     }
