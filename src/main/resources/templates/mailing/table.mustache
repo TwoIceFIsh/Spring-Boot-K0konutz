@@ -9,18 +9,11 @@
     </thead>
     <tbody>
 
-    <tr>
-        <th scope="row"></th>
-        <td>실시간 리스트를 개발 중 입니다.</td>
-        <td></td>
-        <td></td>
-    </tr>
-
     {{#articles}}
         <tr>
             <th scope="row">{{id}}</th>
             <td>{{title}}</td>
-            <td>{{url}}</td>
+            <td><a class="text-black" href="{{url}}">{{url}}</a></td>
             <td>{{date}}</td>
         </tr>
     {{/articles}}
