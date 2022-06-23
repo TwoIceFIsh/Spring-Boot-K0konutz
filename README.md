@@ -7,8 +7,8 @@ www.kokonut.today 의 소스코드이다.
 1. SOC Helper
 https://github.com/TwoIceFIsh/SOC-Helper
 
-2. RSS 보호나라 보안공지
-https://github.com/TwoIceFIsh/Boho-Miling
+2. RSS Boho
+https://github.com/TwoIceFIsh/RSS-Boho
 
 
 
